@@ -23,9 +23,16 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+  color: #eee9e9; /* Change this to your preferred color */
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
+nav ul li a:hover {
+  color: #eaff00; /* Change this to your preferred hover color */
+  text-decoration: underline;
+}
+
 
 section {
     margin: 20px;
@@ -124,12 +131,10 @@ section {
 }
 
 
-
-
 /* *******name typing custom css********** */
 
 .typewriter h1 {
-  color: #000000;
+  color: #15009b;
   font-family: monospace;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid #f4f4f4; /* The typewriter cursor */
@@ -241,41 +246,56 @@ section {
 /* projects section custom css */
 
 #projects {
-  background-color: #f8f8f8;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 5px;
 }
 
 #projects h2 {
-  font-size: 36px;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 #projects h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #555;
-  margin-top: 30px;
-  margin-bottom: 15px;
+    color: #666;
+    margin-bottom: 10px;
 }
 
 #projects ul {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 30px;
+    list-style-type: none;
+    padding-left: 0;
 }
 
-#projects li {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 10px;
+#projects ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
 }
+
+#projects ul li strong {
+    color: #333;
+}
+
+
+
+/* watch live btn css */
+
+.live-btn {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #008CBA; /* Blue color */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.live-btn:hover {
+  background-color: #007B9A; /* Darker blue color on hover */
+}
+
 
 .slider {
   position: relative;
@@ -565,7 +585,7 @@ section {
 }
 
 .download-btn {
-  background-color: #007bff; /* Bootstrap primary blue */
+  background-color: #000000; /* Bootstrap primary blue */
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -612,10 +632,19 @@ section {
 
 /* Existing styles */
 
+.end-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.end-label {
+  margin: 0;
+}
+
 .toTopButton {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: inline-block;
   background-color: black;
   color: white;
   border: none;
@@ -626,6 +655,8 @@ section {
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
+
+
 
 .toTopButton:hover {
   background-color: white;
