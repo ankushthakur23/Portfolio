@@ -12,6 +12,18 @@ header {
     text-align: center;
 }
 
+.fonta{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#animated-icon {
+  position: absolute;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+  border-radius: 50px;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -198,7 +210,7 @@ section {
 }
 
 #skills li {
-  background-color: #333;
+  background-color: #454040f5;
   color: #fff;
   padding: 10px 20px;
   margin: 10px;
@@ -278,23 +290,6 @@ section {
 }
 
 
-
-/* watch live btn css */
-
-.live-btn {
-  display: inline-block;
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #008CBA; /* Blue color */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.live-btn:hover {
-  background-color: #007B9A; /* Darker blue color on hover */
-}
 
 
 .slider {
@@ -395,6 +390,34 @@ section {
     font-size: 14px;
   }
 }
+
+
+.project-category ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns items to the start of the flex container */
+}
+
+.project-category ul li a.live-btn {
+  order: 2;
+  display: block; /* Changes display property to block */
+  width: auto; /* Ensures the button only takes up necessary width */
+}
+
+.live-btn {
+  margin-left: 0; /* Removes left margin */
+  padding: 5px 10px;
+  background-color: #161414; /* Blue color */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.live-btn:hover {
+  background-color: #007B9A; /* Darker blue color on hover */
+}
+
 
 
 /* Existing CSS styles */
