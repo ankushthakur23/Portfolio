@@ -36,13 +36,13 @@ copyIcons.forEach(icon => {
     });
 });
 
-const phoneIcon = document.querySelector('.phone-icon');
-phoneIcon.addEventListener('click', () => {
-    const phone = phoneIcon.dataset.phone;
-    navigator.clipboard.writeText(phone)
-        .then(() => alert('Phone number copied to clipboard!'))
-        .catch(err => console.error('Failed to copy phone number: ', err));
-});
+// const phoneIcon = document.querySelector('.phone-icon');
+// phoneIcon.addEventListener('click', () => {
+//     const phone = phoneIcon.dataset.phone;
+//     navigator.clipboard.writeText(phone)
+//         .then(() => alert('Phone number copied to clipboard!'))
+//         .catch(err => console.error('Failed to copy phone number: ', err));
+// });
 
 // JavaScript for slider functionality
 const slider = document.querySelector('.slider');

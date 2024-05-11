@@ -4,16 +4,8 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
-
-
-
-
-
-
-
-
-
 
 header {
   background-color: #333;
@@ -89,24 +81,6 @@ header .tracking-in-expand:hover::after {
     /* Adjusts padding for smaller screens */
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .popup {
@@ -226,10 +200,6 @@ textarea {
     /* Adjust width on smaller screens */
   }
 }
-
-
-
-
 
 
 #animated-icon {
@@ -812,16 +782,7 @@ section {
   }
 }
 
-
-
-
-
-
 /* /// resume part here  */
-
-
-
-
 
 #resume .container {
   text-align: center;
@@ -878,18 +839,6 @@ section {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* //section heading css */
 
 /* Experience and Education Sections */
@@ -935,7 +884,6 @@ section {
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
-
 
 
 .toTopButton:hover {
@@ -1009,3 +957,4 @@ section {
     margin-top: 10px;
   }
 }
+
