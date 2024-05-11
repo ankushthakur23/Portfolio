@@ -1,20 +1,237 @@
-body, html {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body,
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+
+
+
+
+
+
+
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
 }
 
-.fonta{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+/* General styles - scoped to the header's nav */
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 40px;
+  /* You might adjust padding as per your design needs */
 }
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  /* Ensures horizontal layout by default */
+  gap: 1.25rem;
+  /* Control the space between menu items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: flex-direction 0.3s ease;
+  /* Smooth transition for layout changes */
+}
+
+header .tracking-in-expand {
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fefefe;
+  position: relative;
+  transition: color 0.25s;
+  /* Transition for color change on hover */
+}
+
+header .tracking-in-expand:hover {
+  color: black;
+  /* Hover color change, ensure it fits your design palette */
+}
+
+header .tracking-in-expand::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: #fefefe;
+  scale: 1 0;
+  z-index: -1;
+  transition: 0.45s;
+  border-radius: 10px;
+}
+
+header .tracking-in-expand:hover::after {
+  scale: 1 1;
+  /* Scale the pseudo-element to full size on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    /* Changes layout to vertical on smaller screens */
+  }
+
+  header nav {
+    padding: 20px;
+    /* Adjusts padding for smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  max-width: 400px;
+  width: 80%;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-header h3 {
+  margin: 0;
+}
+
+.close {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-content form {
+  margin-top: 20px;
+}
+
+.popup-content label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.popup-content input,
+.popup-content textarea {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.popup-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #103154;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  /* Full width */
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Include padding in width/height */
+}
+
+textarea {
+  height: 100px;
+  /* Reduced height */
+  resize: none;
+  /* Disable resizing */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .popup-content {
+    width: 70%;
+    /* Adjust width on smaller screens */
+  }
+}
+
+
+
+
+
+
 #animated-icon {
   position: absolute;
   left: 0;
@@ -25,39 +242,41 @@ header {
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+  display: inline;
+  margin-right: 10px;
 }
 
 nav ul li a {
-  color: #eee9e9; /* Change this to your preferred color */
+  color: #eee9e9;
+  /* Change this to your preferred color */
   text-decoration: none;
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #eaff00; /* Change this to your preferred hover color */
+  color: #eaff00;
+  /* Change this to your preferred hover color */
   text-decoration: underline;
 }
 
 
 section {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f4f4f4;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f4f4f4;
 }
 
 .project {
-    background-color: white;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ddd;
+  background-color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
 }
 
 /* // footer css and media queries */
@@ -86,6 +305,7 @@ section {
 
 /* Styles for screens between 600px and 900px */
 @media (min-width: 600px) and (max-width: 900px) {
+
   .contact-info,
   .social-links {
     flex-basis: 50%;
@@ -120,8 +340,10 @@ section {
   color: #e67e22;
 }
 
-.logo img, .social-media img {
-  max-width: 30px; /* Adjust as needed */
+.logo img,
+.social-media img {
+  max-width: 30px;
+  /* Adjust as needed */
   height: auto;
 }
 
@@ -148,26 +370,44 @@ section {
 .typewriter h1 {
   color: #15009b;
   font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #f4f4f4; /* The typewriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #f4f4f4;
+  /* The typewriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
     typing 2.5s steps(30, end),
-    blink-caret .5s step-end 2.5s; /* The cursor will stop blinking after 2.5s */
+    blink-caret .5s step-end 2.5s;
+  /* The cursor will stop blinking after 2.5s */
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color:  #f4f4f4; }
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #f4f4f4;
+  }
 }
 
 
@@ -237,15 +477,19 @@ section {
 }
 
 .copy-icon {
-  height: 20px; /* Adjust the height as needed */
-  width: 20px; /* Adjust the width as needed */
+  height: 20px;
+  /* Adjust the height as needed */
+  width: 20px;
+  /* Adjust the width as needed */
   margin-left: 8px;
   cursor: pointer;
 }
 
 .phone-icon {
-  height: 20px; /* Adjust the height as needed */
-  width: 20px; /* Adjust the width as needed */
+  height: 20px;
+  /* Adjust the height as needed */
+  width: 20px;
+  /* Adjust the width as needed */
   margin-right: 8px;
   vertical-align: middle;
 }
@@ -258,35 +502,35 @@ section {
 /* projects section custom css */
 
 #projects {
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 5px;
 }
 
 #projects h2 {
-    color: #333;
-    margin-bottom: 10px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 #projects h3 {
-    color: #666;
-    margin-bottom: 10px;
+  color: #666;
+  margin-bottom: 10px;
 }
 
 #projects ul {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 #projects ul li {
-    margin-bottom: 10px;
-    font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 #projects ul li strong {
-    color: #333;
+  color: #333;
 }
 
 
@@ -310,11 +554,12 @@ section {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: left;
   flex: 0 0 100%;
   max-width: 100%;
- 
+  overflow-wrap: break-word;
+  /* Ensures words do not overflow */
 }
 
 @media (max-width: 768px) {
@@ -322,14 +567,13 @@ section {
     padding: 15px;
   }
 
-  .project-card h4 {
-    font-size: 18px;
-  }
-
+  .project-card h4,
   .project-card p {
-    font-size: 14px;
+    word-wrap: break-word;
+    /* Breaks long words to prevent overflow */
   }
 }
+
 
 .project-card h4 {
   font-size: 20px;
@@ -395,19 +639,24 @@ section {
 .project-category ul li {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Aligns items to the start of the flex container */
+  align-items: center;
+  /* Aligns items to the start of the flex container */
 }
 
 .project-category ul li a.live-btn {
   order: 2;
-  display: block; /* Changes display property to block */
-  width: auto; /* Ensures the button only takes up necessary width */
+  display: block;
+  /* Changes display property to block */
+  width: auto;
+  /* Ensures the button only takes up necessary width */
 }
 
 .live-btn {
-  margin-left: 0; /* Removes left margin */
+  margin-left: 0;
+  /* Removes left margin */
   padding: 5px 10px;
-  background-color: #161414; /* Blue color */
+  background-color: #161414;
+  /* Blue color */
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -415,7 +664,8 @@ section {
 }
 
 .live-btn:hover {
-  background-color: #007B9A; /* Darker blue color on hover */
+  background-color: #007B9A;
+  /* Darker blue color on hover */
 }
 
 
@@ -531,6 +781,7 @@ section {
     opacity: 0;
     transform: translateX(-50px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -542,6 +793,7 @@ section {
     opacity: 0;
     transform: translateX(50px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -553,6 +805,7 @@ section {
     opacity: 0;
     transform: translateY(50px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -573,9 +826,10 @@ section {
 #resume .container {
   text-align: center;
   padding: 40px;
-  background-color: #f8f9fa; /* light grey background */
+  background-color: #f8f9fa;
+  /* light grey background */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-with-image h2 {
@@ -585,9 +839,11 @@ section {
 }
 
 .resume-image {
-  width: 150px; /* Adjust based on your preference */
+  width: 150px;
+  /* Adjust based on your preference */
   height: auto;
-  border-radius: 50%; /* Circular image */
+  border-radius: 50%;
+  /* Circular image */
 }
 
 .resume-download {
@@ -608,7 +864,8 @@ section {
 }
 
 .download-btn {
-  background-color: #000000; /* Bootstrap primary blue */
+  background-color: #000000;
+  /* Bootstrap primary blue */
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -686,11 +943,12 @@ section {
   color: black;
   cursor: pointer;
 }
+
 /* animation for logos etc  */
 
 .tracking-in-expand {
-	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 /* Animation */
@@ -698,9 +956,11 @@ section {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -712,9 +972,11 @@ section {
     letter-spacing: -0.5em;
     opacity: 0;
   }
+
   40% {
     opacity: 0.6;
   }
+
   100% {
     opacity: 1;
   }
@@ -725,9 +987,11 @@ section {
     letter-spacing: -0.5em;
     opacity: 0;
   }
+
   40% {
     opacity: 0.6;
   }
+
   100% {
     opacity: 1;
   }
@@ -736,12 +1000,12 @@ section {
 
 /* responsiveness */
 @media screen and (max-width: 600px) {
-    nav ul {
-        text-align: center;
-    }
+  nav ul {
+    text-align: center;
+  }
 
-    nav ul li {
-        display: block;
-        margin-top: 10px;
-    }
+  nav ul li {
+    display: block;
+    margin-top: 10px;
+  }
 }

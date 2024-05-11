@@ -36,7 +36,7 @@
         </section>
 
         <section id="skills">
-          <h2 class="fonta">🚀 Skills</h2>
+          <h2>🚀 Skills</h2>
           <div class="skill-category">
               <h3>🔧 Technical Skills</h3>
               <ul>
@@ -216,6 +216,7 @@
               </span>
             </p>
             <p>City of Residence: Hyderabad</p>
+            <button id="contactBtn">Contact Me</button>
           </section>
 
         <section id="resume">
@@ -240,16 +241,49 @@
         
     </main>
 
+    <div id="popup" class="popup">
+      <div class="popup-overlay" onclick="closePopup()"></div>
+      <div class="popup-content">
+        <div class="popup-header">
+          <h3>Contact Form</h3>
+          <i class="close" onclick="closePopup()">×</i>
+        </div>
+        <form id="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    
+
     <footer class="footer">
         <div class="footer-container">
           <div class="contact-info">
             <h3>Contact Me</h3>
             <span class="email-container">
               AryanRaj.frontenddev@example.com
-              <img src="images/copy.png" alt="Copy Icon" class="copy-icon" data-email="AryanRaj.frontenddev@example.com">
+              <img src="images/copy.png" 
+                alt="Copy Icon" 
+                class="copy-icon" 
+                data-email="AryanRaj.frontenddev@example.com"
+                title="Click to copy email">
             </span>
             <p>
-              <img src="images/viber.png" alt="Phone Icon" class="phone-icon" data-phone="+1 (123) 456-7890">
+              <img 
+              src="images/viber.png" 
+              alt="Phone Icon" 
+              class="phone-icon" 
+              data-phone="+1 (123) 456-7890"
+              title="Click to copy phone Number">
               Phone: +1 (123) 456-7890
             </p>
           </div>
