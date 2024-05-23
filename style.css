@@ -318,122 +318,290 @@ section {
 }
 
 
-/* programmer logo css */
 
-#about .header-with-image {
-  display: flex;
-  align-items: center;
+
+
+
+
+
+
+
+
+/* about section part css */
+.headClass {
+  overflow: hidden; /* Ensures that content clipped if it overflows */
+  display: inline-block; /* Aligns to the text size */
 }
 
-#about .header-with-image h2 {
-  margin-right: 10px;
+h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  white-space: nowrap; /* Ensures the text stays in a single line */
+  margin: 0;
+  animation: reveal 2s ease-out forwards; /* Animation applied to h1 */
 }
 
-#about .header-with-image img {
-  width: 30px;
-  height: 30px;
+/* Keyframes for the reveal animation */
+@keyframes reveal {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  h1 {
+      font-size: 2rem; /* Smaller font size for mobile screens */
+  }
+}
+
+/* Additional media query for very small screens */
+@media (max-width: 400px) {
+  h1 {
+      font-size: 1.5rem; /* Even smaller font size for very small screens */
+  }
 }
 
 
-/* *******name typing custom css********** */
+
+
+
+
+
+
+
+
+
+
+/* About section styling */
+#about {
+  background: radial-gradient(circle at 50% 0%, #262626, #000000);
+  color: #fff;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
 
 .typewriter h1 {
-  color: #15009b;
-  font-family: monospace;
-  overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #f4f4f4;
-  /* The typewriter cursor */
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 48px;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+  border-right: 0.15em solid orange; /* Cursor color */
   white-space: nowrap;
-  /* Keeps the content on a single line */
   margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em;
-  /* Adjust as needed */
-  animation:
-    typing 2.5s steps(30, end),
-    blink-caret .5s step-end 2.5s;
-  /* The cursor will stop blinking after 2.5s */
+  letter-spacing: 0.15em;
+  width: 100%;
+  overflow: hidden;
+  animation: typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
 }
 
-/* The typing effect */
 @keyframes typing {
-  from {
-    width: 0
-  }
-
-  to {
-    width: 100%
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
-
-  from,
-  to {
-    border-color: transparent
-  }
-
-  50% {
-    border-color: #f4f4f4;
-  }
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
 }
+
+/* Make the cursor stop blinking once typing is complete */
+.typewriter h1 {
+  animation-delay: 0s, 3.5s; /* Start blinking animation after typing is complete */
+  animation-iteration-count: 1, infinite;
+}
+
+.header-with-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  margin-top: 40px;
+}
+
+.header-with-image h2 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 36px;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+  margin-right: 20px;
+}
+
+.header-with-image img {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 0 10px #00ff00) drop-shadow(0 0 20px #00ff00) drop-shadow(0 0 40px #00ff00);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+#about p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+  max-width: 800px;
+  margin: 20px auto 30px; /* Increased bottom margin for better paragraph separation */
+  line-height: 1.6;
+  position: relative;
+  padding: 0 10px; /* Added padding for better text handling */
+}
+
+#about p::before {
+  content: '>';
+  position: absolute;
+  left: -30px;
+  color: #00ff00;
+  font-size: 20px;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ************Skills section css*********** */
 
 /* Overall section styling */
-#skills {
-  background-color: #f8f8f8;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.skills-section {
+  background: linear-gradient(135deg, #2a2f32, #4e5357);
+  padding: 100px 0;
+  color: #ecf0f1;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
 }
 
 /* Heading styles */
-#skills h2 {
-  font-size: 36px;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 30px;
+.skills-section h2 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 80px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
+  position: relative;
 }
 
-#skills h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #555;
-  margin-top: 30px;
-  margin-bottom: 15px;
+.skills-section h2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
+  z-index: -1;
 }
 
-/* List styles */
-#skills ul {
+/* Skill category styles */
+.skill-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.skill-category h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #cad3d8;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.skill-list {
   list-style-type: none;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 
-#skills li {
-  background-color: #454040f5;
+.skill-list li {
+  background-color: #000000;
   color: #fff;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 20px;
-  font-size: 16px;
+  padding: 15px 30px;
+  margin: 5px;
+  border-radius: 25px;
+  font-size: 18px;
   font-weight: 500;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-#skills li:hover {
-  background-color: #555;
-  cursor: default;
+.skill-list li:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: translateY(-5px);
+  cursor: pointer;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-section h2 {
+    font-size: 40px; /* Smaller font size for medium screens */
+    margin-bottom: 50px; /* Less vertical spacing */
+    letter-spacing: 3px; /* Slightly reduced letter spacing */
+  }
+
+  .skill-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section h2 {
+    font-size: 28px; /* Even smaller font size for small screens */
+    margin-bottom: 30px; /* Further reduced vertical spacing */
+    letter-spacing: 1px; /* Minimal letter spacing */
+  }
+
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -469,105 +637,99 @@ section {
 }
 
 
-/* projects section custom css */
 
+
+
+
+
+
+
+
+
+
+
+/* Projects Section */
 #projects {
-  margin: 20px;
-  padding: 20px;
+  background: radial-gradient(circle at 50% 0%, #262626, #000000);
+  margin: 40px 20px;
+  padding: 40px; /* Adjust padding for smaller screens */
   text-align: center;
-  background-color: #f9f9f9;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 #projects h2 {
-  color: #333;
-  margin-bottom: 10px;
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #projects h3 {
-  color: #666;
-  margin-bottom: 10px;
+  color: #ccc;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-#projects ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#projects ul li {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-#projects ul li strong {
-  color: #333;
-}
-
-
-
-
+/* Slider */
 .slider {
   position: relative;
-  width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .slider-container {
   display: flex;
-  width: 100%;
   transition: transform 0.5s ease-in-out;
 }
 
 .project-card {
-  background-color: #fff;
-  padding: 20px;
+  background-color: #2a2a2a;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   text-align: left;
   flex: 0 0 100%;
   max-width: 100%;
   overflow-wrap: break-word;
-  /* Ensures words do not overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .project-card {
-    padding: 15px;
-  }
-
-  .project-card h4,
-  .project-card p {
-    word-wrap: break-word;
-    /* Breaks long words to prevent overflow */
-  }
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
-
 
 .project-card h4 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .project-card p {
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  color: #ccc;
 }
 
 .tech-stack,
 .key-features {
   font-weight: 600;
-  color: #555;
+  color: #aaa;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Slider Controls */
 .slider-controls {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .prev-btn,
@@ -579,11 +741,14 @@ section {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 0 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .prev-btn:hover,
 .next-btn:hover {
   background-color: #555;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .fa-chevron-left,
@@ -591,7 +756,143 @@ section {
   font-size: 16px;
 }
 
+/* Indicator Dots */
+.indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #555;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.indicator-dot.active {
+  background-color: #ccc;
+}
+
+/* Project Category */
+.project-category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-category ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 20px; /* Add spacing between list items */
+}
+
+.project-category ul li:last-child {
+  margin-bottom: 0; /* Remove bottom margin for the last list item */
+}
+
+.project-category ul li strong {
+  color: #fff;
+}
+
+.project-category ul li a.live-btn {
+  order: 2;
+  display: block;
+  width: auto;
+  color: #fff;
+  margin-top: 10px; /* Add spacing between the text and the live-btn link */
+}
+
+.live-btn {
+  margin-left: 0;
+  padding: 8px 16px;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.live-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slider-container {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+
 @media (max-width: 768px) {
+  #projects {
+    padding: 30px 15px; /* Adjust padding for smaller screens */
+  }
+
+  #projects h2 {
+    font-size: 28px;
+  }
+
+  #projects h3 {
+    font-size: 22px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-card h4 {
+    font-size: 20px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #projects {
+    padding: 20px 10px; /* Adjust padding for even smaller screens */
+  }
+
+  #projects h2 {
+    font-size: 24px;
+  }
+
+  #projects h3 {
+    font-size: 18px;
+  }
+
   .project-card {
     padding: 15px;
   }
@@ -601,68 +902,9 @@ section {
   }
 
   .project-card p {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
-
-
-.project-category ul li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Aligns items to the start of the flex container */
-}
-
-.project-category ul li a.live-btn {
-  order: 2;
-  display: block;
-  /* Changes display property to block */
-  width: auto;
-  /* Ensures the button only takes up necessary width */
-}
-
-.live-btn {
-  margin-left: 0;
-  /* Removes left margin */
-  padding: 5px 10px;
-  background-color: #161414;
-  /* Blue color */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.live-btn:hover {
-  background-color: #007B9A;
-  /* Darker blue color on hover */
-}
-
-
-
-/* Existing CSS styles */
-
-.indicator {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.indicator-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ccc;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.indicator-dot.active {
-  background-color: #333;
-}
-
-
 
 /* for experience and education custom classes */
 
@@ -787,14 +1029,13 @@ section {
 #resume .container {
   text-align: center;
   padding: 40px;
-  background-color: #f8f9fa;
-  /* light grey background */
+  background-color: #000000;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-with-image h2 {
-  color: #333;
+  color: #000000;
   font-size: 24px;
   margin-bottom: 20px;
 }
