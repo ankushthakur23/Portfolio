@@ -18,7 +18,7 @@
                 <li><a class="tracking-in-expand" href="#experience">Experience</a></li>
                 <li><a class="tracking-in-expand" href="#education">Education</a></li>
                 <li><a class="tracking-in-expand" href="#contact">Contact</a></li>
-                <li><a class="tracking-in-expand" href="#resume">Resume</a></li>
+                <!-- <li><a class="tracking-in-expand" href="#resume">Resume</a></li> -->
             </ul>
         </nav>
     </header>
@@ -233,11 +233,11 @@
             </p>
             <p>City of Residence: Hyderabad</p>
             <button id="contactBtn" class="download-btn">Contact Me</button>
-          </section>
-
-        <section id="resume">
+        </section>
+          
+        <!-- <section id="resume">
             <div class="container">
-                <div class="header-with-image">
+                <div class="header-with-image-resume">
                     <h2>Resume</h2>
                     <a  target="_blank"><img src="images/programmer.png" alt="Programmer Image" class="resume-image"></a>
                 </div>
@@ -248,7 +248,7 @@
                     <a href="path/to/Ankush.doc" download="Ankush.doc" class="download-btn">Download</a>
                 </div>
             </div>
-        </section>
+        </section> -->
         
         <section class="end-section">
             <label for="endOfPage" class="end-label">You have reached END of the PAGE</label>
@@ -261,7 +261,7 @@
       <div class="popup-overlay" onclick="closePopup()"></div>
       <div class="popup-content">
         <div class="popup-header">
-          <h3 class="section-heading">Contact Form</h3>
+          <h3>Contact Form</h3>
           <i class="close" onclick="closePopup()">×</i>
         </div>
         <form id="contact-form">
@@ -280,35 +280,32 @@
     </div>
     
     
+    
 
     <footer class="footer">
-        <div class="footer-container">
-          <div class="contact-info">
-            <h3>Contact Me</h3>
-            <span class="email-container">
-              Ankushmj23@gmail.com
-              <img src="images/copy.png" 
-                alt="Copy Icon" 
-                class="copy-icon" 
-                data-email="Ankushmj23@gmail.com"
-                title="Click to copy email">
-            </span>
-          </div>
-          <div class="social-links">
-            <h3>Follow Me</h3>
-            <ul>
-              <div class="social-media">
-                <li><a href="https://github.com/ankushthakur23"><img src="images/github.png" alt="github"></a></li>
-                <li><a href="https://www.linkedin.com/in/ankush-kumar-7837a5212/"><img src="images/linkedin-logo.png" alt="linkedin"></a></li>
-                <li><a href="#"><img src="images/x.png" alt="Twitter"></a></li>
-              </div>
-            </ul>
-          </div>
-          <div class="copyright">
-            <p>&copy; 2024 Ankush's. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Get in Touch</h3>
+          <div class="email-container">
+            <a href="mailto:Ankushmj23@gmail.com" class="email-link">Ankushmj23@gmail.com</a>
+            <img src="images/copy.png" alt="Copy Icon" class="copy-icon" data-email="Ankushmj23@gmail.com" title="Click to copy email">
           </div>
         </div>
-      </footer>
+        <div class="footer-section">
+          <h3>Follow Me</h3>
+          <ul class="social-icons">
+            <li><a href="https://github.com/ankushthakur23" target="_blank" rel="noopener noreferrer"><img src="images/github.png" alt="GitHub"></a></li>
+            <li><a href="https://www.linkedin.com/in/ankush-kumar-7837a5212/" target="_blank" rel="noopener noreferrer"><img src="images/linkedin-logo.png" alt="LinkedIn"></a></li>
+            <!-- Add other social media icons here -->
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"> 
+        <p>&copy; 2024 Ankush's. All rights reserved.</p>
+      </div>
+    </footer>
+    
+    
 
     <script src="script.js"></script>
 </body>
